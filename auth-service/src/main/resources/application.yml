@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: auth-service
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret:
+    key: 1a425803fd6b8bbb02a0e2eb5aaae22ebacbd423a5abf21d713f390a458220bc8224631d789c14826b971aa6ddf0460061c9a6682aa674ad14824e1d11882105
+  expiration:
+    ms: 86400000
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        oauth2: DEBUG
+    reactor.netty: DEBUG
